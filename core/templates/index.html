@@ -1,0 +1,20 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+    <h2 class="mb-4 text-center">Lista de Productos</h2>
+        <div class="row">
+            {% for producto in productos %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                     <img src="{{ producto.imagen }}" class="card-img-top" alt="{{ producto.nombre }}">
+                     <div class="card-body">
+                        <h5 class="card-title">{{ producto.nombre }}</h5>
+                         <p class="card-text text-muted">Precio: ${{ producto.precio }}</p>
+                     </div>   
+                </div>
+            </div>         
+            {% endfor %}  
+        </div>
+        
+        
+{% endblock %}
